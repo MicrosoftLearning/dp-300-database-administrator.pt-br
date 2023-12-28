@@ -1,0 +1,113 @@
+---
+lab:
+  title: 'Laboratório: implantar Banco de Dados SQL do Azure usando um modelo do Azure Resource Manager'
+  module: Automate database tasks for Azure SQL
+---
+
+# Implantar um Banco de Dados SQL do Azure a partir de um modelo
+
+**Tempo estimado**: 15 minutos
+
+Você foi contratado como engenheiro de dados sênior para ajudar a automatizar operações rotineiras de administração do banco de dados. Essa automação serve para ajudar a garantir que os bancos de dados do AdventureWorks continuem operando com o máximo de desempenho e para fornecer métodos para gerar alertas com base em determinados critérios. O AdventureWorks usa o SQL Server em ofertas de Infraestrutura como Serviço e Plataforma como Serviço.
+
+## Explorar o modelo do Azure Resource Manager
+
+1. No Microsoft Edge, abra uma nova guia e navegue até o caminho a seguir em um repositório GitHub, que contém um modelo do ARM para implantar um recurso do Banco de Dados SQL
+
+    ```
+    https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.sql/sql-database
+    ```
+
+1. Clique com o botão direito do mouse em **azuredeploy.json** e selecione **Abrir link na nova guia** para exibir o modelo do ARM, que deve ser semelhante a este
+
+    ```JSON
+    {
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serverName": {
+        "type": "string",
+        "defaultValue": "[uniqueString('sql', resourceGroup().id)]",
+        "metadata": {
+            "description": "The name of the SQL logical server."
+        }
+        },
+        "sqlDBName": {
+        "type": "string",
+        "defaultValue": "SampleDB",
+        "metadata": {
+            "description": "The name of the SQL Database."
+        }
+        },
+        "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+            "description": "Location for all resources."
+        }
+        },
+        "administratorLogin": {
+        "type": "string",
+        "metadata": {
+            "description": "The administrator username of the SQL logical server."
+        }
+        },
+        "administratorLoginPassword": {
+        "type": "securestring",
+        "metadata": {
+            "description": "The administrator password of the SQL logical server."
+        }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+        "type": "Microsoft.Sql/servers",
+        "apiVersion": "2020-02-02-preview",
+        "name": "[parameters('serverName')]",
+        "location": "[parameters('location')]",
+        "properties": {
+            "administratorLogin": "[parameters('administratorLogin')]",
+            "administratorLoginPassword": "[parameters('administratorLoginPassword')]"
+        },
+        "resources": [
+            {
+            "type": "databases",
+            "apiVersion": "2020-08-01-preview",
+            "name": "[parameters('sqlDBName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', concat(parameters('serverName')))]"
+            ]
+            }
+        ]
+        }
+    ]
+    }
+    ```
+
+1. Revise e observe as propriedades JSON.
+
+1. Feche a guia do **azuredeploy.json** e retorne à guia que contém a pasta **sql-database** do GitHub. Role para baixo e selecione **Implantar no Azure**.
+
+    ![Botão Implantar no Azure](../images/dp-300-module-11-lab-01.png)
+
+1. A **página Criar um modelo de início rápido do SQL Server e Banco de Dados será aberta no portal do Azure, com os detalhes do recurso parcialmente preenchidos a partir do** modelo ARM. Preencha os campos com as seguintes informações:
+
+    - **Grupo de recursos:** começando com *contoso-rg*
+    - Logon do Administrador SQL: labadmin
+    - Senha de logon do Administrador SQL: insira uma senha forte
+
+1. Selecione **Examinar + Criar** e, em seguida, selecione **Criar**. Sua implantação levará em torno de cinco minutos para ser realizada.
+
+    ![Figura 2](../images/dp-300-module-11-lab-02.png)
+
+1. Quando a implantação for concluída, selecione **Ir para grupo de recursos**. Você será levado para o grupo de recursos do Azure, que contém um recurso do **SQL Server** nomeado aleatoriamente pela implantação.
+
+    ![Figura 3](../images/dp-300-module-11-lab-03.png)
+
+Você acabou de ver como, com um único clique no link de um modelo do Azure Resource Manager, você pode criar um banco de dados e um servidor SQL do Azure em minutos.
