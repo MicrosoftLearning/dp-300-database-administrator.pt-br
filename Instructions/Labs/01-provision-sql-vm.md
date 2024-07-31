@@ -89,11 +89,9 @@ Você é um administrador de banco de dados da AdventureWorks. Você precisa cri
 
 ## Conectar-se ao SQL Server em uma Máquina Virtual do Azure
 
-1. Na página **Visão geral** da máquina virtual, selecione o botão **Conectar** e escolha RDP.
+1. Clique em **Conectar** na página **Visão geral** da máquina virtual.
 
-    ![Figura 21](../images/dp-300-module-01-lab-21.png)
-
-1. Na guia do RDP, selecione o botão **Baixar Arquivo RDP**.
+1. Na página Conectar, clique no botão **Baixar arquivo RDP**.
 
     ![Figura 22](../images/dp-300-module-01-lab-22.png)
 
@@ -115,7 +113,7 @@ Você é um administrador de banco de dados da AdventureWorks. Você precisa cri
 
 1. Selecione o botão Iniciar do Windows e digite SSMS. Selecione **Microsoft SQL Server Management Studio** na lista.  
 
-1. Quando o SSMS for aberto, observe que a caixa de diálogo **Conectar ao Servidor** será pré-preenchida com o nome de instância padrão. Selecione **Conectar**.
+1. Quando o SSMS for aberto, observe que a caixa de diálogo **Conectar ao Servidor** será pré-preenchida com o nome de instância padrão. Marque a opção **Confiar em certificado do servidor** e selecione **Conectar**.
 
     ![Figura 35](../images/dp-300-module-01-lab-35.png)
 
