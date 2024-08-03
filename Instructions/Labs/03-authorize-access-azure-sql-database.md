@@ -16,7 +16,7 @@ Você foi contratado como um Administrador de Banco de Dados Sênior para ajudar
 
 ## Autorizar o acesso ao Banco de Dados SQL do Azure com o Azure Active Directory
 
-1. Na máquina virtual do laboratório, inicie uma sessão do navegador e navegue até [https://portal.azure.com](https://portal.azure.com/). Conecte-se ao Portal usando o **Nome de usuário** e a **Senha** do Azure fornecidos na guia **Recursos** desta máquina virtual de laboratório.
+1. Na máquina virtual do laboratório, inicie uma sessão do navegador e navegue até [https://portal.azure.com](https://portal.azure.com/). Conecte-se ao Portal usando o **Nome de Usuário** e a **Senha** do Azure fornecidos na guia **Recursos** dessa máquina virtual do laboratório.
 
     ![Figura 1](../images/dp-300-module-01-lab-01.png)
 
@@ -24,7 +24,7 @@ Você foi contratado como um Administrador de Banco de Dados Sênior para ajudar
 
     ![Captura de tela da página inicial do portal do Azure, selecionando Todos os recursos](../images/dp-300-module-03-lab-01.png)
 
-1. Selecione o servidor do Banco de dados SQL do Azure **dp300-lab-xxxxxx**, em que **xxxxxx** é uma cadeia de caracteres aleatória, e selecione **Não configurado** ao lado de **Administrador do Active Directory**.
+1. Selecione o SQL server **dp300-lab-xxxxxx**, em que **xxxxxx** é uma cadeia de caracteres aleatória, e selecione **Não Configurado** ao lado de **Administrador do Active Directory**.
 
     ![Captura de tela da seleção de Não configurado](../images/dp-300-module-03-lab-02.png)
 
