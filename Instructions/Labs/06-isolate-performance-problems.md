@@ -16,15 +16,15 @@ Você foi contratado como administrador de banco de dados para identificar probl
 
 ## Examinar a utilização da CPU no portal do Azure
 
-1. Na máquina virtual do laboratório, inicie uma sessão do navegador e navegue até [https://portal.azure.com](https://portal.azure.com/). Conecte-se ao Portal usando o **Nome de Usuário** e a **Senha** do Azure fornecidos na guia **Recursos** dessa máquina virtual de laboratório.
+1. Na máquina virtual do laboratório, inicie uma sessão do navegador e navegue até [https://portal.azure.com](https://portal.azure.com/). Conecte-se ao Portal usando o **Nome de Usuário** e a **Senha** do Azure fornecidos na guia **Recursos** dessa máquina virtual do laboratório.
 
     ![Figura 1](../images/dp-300-module-01-lab-01.png)
 
-1. No Portal do Azure, pesquise por "servidores do SQL" na caixa de pesquisa na parte superior e clique em **servidores do SQL** na lista de opções.
+1. No Portal do Azure, pesquise por "servidores SQL" na caixa de pesquisa na parte superior e clique em **servidores SQL** na lista de opções.
 
     ![Uma captura de tela de uma postagem de mídia social Descrição gerada automaticamente](../images/dp-300-module-04-lab-1.png)
 
-1. Selecione o nome do servidor **dp300-lab-XXXXXXXXX** a ser levado para a página de detalhes (você pode ter um grupo de recursos e um local diferentes atribuídos ao seu servidor do SQL do Azure).
+1. Selecione o nome do servidor **dp300-lab-XXXXXXXXX** a ser levado para a página de detalhes (você pode ter um grupo de recursos e um local diferentes atribuídos ao seu servidor SQL).
 
     ![Uma captura de tela de uma postagem de mídia social Descrição gerada automaticamente](../images/dp-300-module-04-lab-2.png)
 
