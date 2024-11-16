@@ -30,15 +30,15 @@ Você foi contratado como um Administrador de Banco de Dados Sênior para ajudar
 
 1. Na tela de detalhes do SQL Server, mova o mouse para a direita do nome do servidor e selecione o botão **Copiar para área de transferência**, conforme mostrado abaixo.
 
-    ![Figura 2](../images/dp-300-module-04-lab-3.png)
+    ![Imagem 2](../images/dp-300-module-04-lab-3.png)
 
 1. Selecione **Mostrar configurações de rede**.
 
-    ![Figura 2](../images/dp-300-module-04-lab-4.png)
+    ![Imagem 2](../images/dp-300-module-04-lab-4.png)
 
 1. Na página **Rede**, clique em **+ Adicionar o endereço IPv4 do cliente (seu endereço IP)** e, em seguida, clique em **Salvar**.
 
-    ![Figura 3](../images/dp-300-module-04-lab-5.png)
+    ![Imagem 3](../images/dp-300-module-04-lab-5.png)
 
     **Observação:** O endereço IP do seu cliente foi inserido automaticamente. A inclusão do endereço IP do cliente à lista permitirá que você se conecte ao seu Banco de Dados SQL do Azure usando o SQL Server Management Studio ou qualquer outra ferramenta de cliente. **Anote o endereço IP do cliente, pois você o usará mais adiante**.
 

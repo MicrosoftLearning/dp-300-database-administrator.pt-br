@@ -1,36 +1,36 @@
 ---
 lab:
-  title: 'Laboratório: identificar e resolver problemas de bloqueio'
+  title: Laboratório 8 – Identificar e resolver problemas de bloqueio
   module: Optimize query performance in Azure SQL
 ---
 
-# Laboratório: identificar e resolver problemas de bloqueio
+# Identificar e resolver problemas de bloqueio
 
 **Tempo estimado**: 15 minutos
 
-Os alunos levarão as informações obtidas nas aulas para definir o escopo dos resultados de um projeto de transformação digital dentro da AdventureWorks. Examinando o portal do Azure, bem como outras ferramentas, os alunos determinarão como utilizar ferramentas nativas para identificar e resolver problemas relacionados ao desempenho. Finalmente, os alunos serão capazes de identificar e resolver problemas de bloqueio adequadamente.
+Os alunos levarão as informações obtidas nas aulas para definir o escopo das entregas para um projeto de transformação digital no AdventureWorks. Ao examinar o portal do Azure, bem como outras ferramentas, os alunos determinarão como utilizar ferramentas nativas para identificar e resolver problemas relacionados ao desempenho. Finalmente, os alunos serão capazes de identificar e resolver problemas de bloqueio adequadamente.
 
 Você foi contratado como administrador de banco de dados para identificar problemas relacionados ao desempenho e fornecer soluções viáveis para solucionar todos os problemas encontrados. Você precisa investigar os problemas de desempenho e sugerir métodos para resolvê-los.
 
-**Nota:** Estes exercícios pedem que você copie e cole o código T-SQL. Verifique se o código foi copiado corretamente, antes de executar o código.
+**Observação:** estes exercícios pedem que você copie e cole o código T-SQL. Verifique se o código foi copiado corretamente antes de executá-lo.
 
 ## Restaurar um banco de dados
 
-1. Faça download do arquivo de backup do banco de dados localizado em ****https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** C:\LabFiles\Monitor e otimize** o caminho na máquina virtual do laboratório (crie a estrutura de pastas se ela não existir).
+1. Faça download do arquivo de backup do banco de dados localizado em **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** para o caminho **C:\LabFiles\Monitor and optimize** na máquina virtual do laboratório (crie a estrutura de pastas se ela não existir).
 
-    ![Foto 03](../images/dp-300-module-07-lab-03.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-03.png)
 
 1. Selecione o botão Iniciar do Windows e digite SSMS. Selecione **Microsoft SQL Server Management Studio 18** na lista.  
 
-    ![Figura 48](../images/dp-300-module-01-lab-34.png)
+    ![Imagem 01](../images/dp-300-module-01-lab-34.png)
 
-1. Quando o SSMS for aberto, observe que a caixa de diálogo Conectar ao Servidor** será pré-preenchida com o **nome de instância padrão. Selecione **Conectar**.
+1. Quando o SSMS for aberto, observe que a caixa de diálogo **Conectar ao Servidor** será pré-preenchida com o nome de instância padrão. Selecione **Conectar**.
 
-    ![Foto 02](../images/dp-300-module-07-lab-01.png)
+    ![Imagem 02](../images/dp-300-module-07-lab-01.png)
 
-1. Selecione a **pasta Bancos de Dados** e Nova **Consulta**.
+1. Selecione a pasta**Bancos de Dados** e **Nova Consulta**.
 
-    ![Foto 03](../images/dp-300-module-07-lab-04.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-04.png)
 
 1. Na janela Nova consulta, copie e cole o T-SQL abaixo. Execute a consulta para restaurar o banco de dados.
 
@@ -44,11 +44,11 @@ Você foi contratado como administrador de banco de dados para identificar probl
             TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
     ```
 
-    **Nota:** O nome e o caminho do arquivo de backup do banco de dados devem corresponder ao que você baixou na etapa 1, caso contrário, o comando falhará.
+    **Observação:** o nome e o caminho do arquivo de backup do banco de dados devem corresponder ao que você baixou na etapa 1, caso contrário, o comando falhará.
 
-1. Você verá uma mensagem bem-sucedida após a conclusão da restauração.
+1. Uma mensagem de sucesso será exibida após a conclusão da restauração.
 
-    ![Foto 03](../images/dp-300-module-07-lab-05.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-05.png)
 
 ## Executar um relatório de consultas bloqueadas
 
@@ -94,7 +94,7 @@ Você foi contratado como administrador de banco de dados para identificar probl
     GO
     ```
 
-    O limite, em segundos, no qual os relatórios de processos bloqueados são gerados. Como resultado, não somos obrigados a esperar tanto tempo para que a blocked_process_report* seja levantada *nesta lição.
+    **Observação:** o comando acima especifica o limite, em segundos, no qual os relatórios de processos bloqueados são gerados. Como resultado, não somos obrigados a esperar tanto tempo para que o *blocked_process_report* seja levantado nesta lição.
 
 1. Selecione **Nova Consulta**. Copie e cole o código T-SQL abaixo na janela de consulta. Clique em **Executar** para executar esta consulta.
 
@@ -109,7 +109,7 @@ Você foi contratado como administrador de banco de dados para identificar probl
     GO
     ```
 
-1. Abra outra janela de consulta clicando no botão **Nova Consulta**. Copie e cole o código T-SQL abaixo na janela de consulta. Clique em **Executar** para executar esta consulta.
+1. Abra outra janela de consulta clicando no botão **Nova Consulta**. Copie e cole o seguinte código T-SQL na nova janela de consulta. Clique em **Executar** para executar esta consulta.
 
     ```sql
     USE AdventureWorks2017
@@ -122,27 +122,27 @@ Você foi contratado como administrador de banco de dados para identificar probl
     WHERE FirstName = 'David'
     ```
 
-    **Nota:** esta consulta não retorna nenhum resultado e parece ser executada indefinidamente.
+    **Observação:** esta consulta não retorna nenhum resultado e parece ser executada indefinidamente.
 
-1. No Pesquisador de Objetos, expanda Gerenciamento, Eventos Estendidos e, em seguida, Sessões.
+1. Em **Pesquisador de Objetos**, expanda **Gerenciamento** -> **Eventos Estendidos** -> **Sessões**.
 
-    Observe que o evento estendido chamado Bloqueio* que *acabamos de criar está na lista.
+    Observe que o evento estendido chamado *Bloqueio* que acabamos de criar está na lista.
 
-    ![Figura 48](../images/dp-300-module-08-lab-01.png)
+    ![Imagem 01](../images/dp-300-module-08-lab-01.png)
 
-1. Clique com o botão direito do mouse em package0.ring_buffer, depois clique em Exibir Dados de Destino.
+1. Clique com o botão direito do mouse em **package0.ring_buffer**, depois clique em **Exibir Dados de Destino**.
 
-    ![Foto 02](../images/dp-300-module-08-lab-02.png)
+    ![Imagem 02](../images/dp-300-module-08-lab-02.png)
 
 1. Clique no hiperlink.
 
-    ![Foto 03](../images/dp-300-module-08-lab-03.png)
+    ![Imagem 03](../images/dp-300-module-08-lab-03.png)
 
-1. O arquivo XML mostrará quais processos estão sendo bloqueados e qual processo está causando o bloqueio. Será possível conferir as consultas que foram executadas nesse processo, bem como informações do sistema.
+1. O XML mostrará quais processos estão sendo bloqueados e qual processo está causando o bloqueio. Será possível conferir as consultas que foram executadas nesse processo, bem como informações do sistema.
 
-    ![Foto 04](../images/dp-300-module-08-lab-04.png)
+    ![Imagem 04](../images/dp-300-module-08-lab-04.png)
 
-1. Essa consulta também pode ser usada para identificar sessões que bloqueiam outras sessões, incluindo uma lista de session_ids bloqueadas por session_id.
+1. Como alternativa, você pode executar a consulta abaixo para identificar sessões que bloqueiam outras sessões, incluindo uma lista de IDs de sessão bloqueados por *session_id*.
 
     ```sql
     WITH cteBL (session_id, blocking_these) AS 
@@ -164,19 +164,19 @@ Você foi contratado como administrador de banco de dados para identificar probl
     ORDER BY len(bl.blocking_these) desc, r.blocking_session_id desc, r.session_id;
     ```
 
-    ![Foto 05](../images/dp-300-module-08-lab-05.png)
+    ![Imagem 05](../images/dp-300-module-08-lab-05.png)
 
-1. Clique com o botão direito do mouse no evento estendido chamado **Bloqueio e selecione **Parar Sessão****.
+1. Clique com o botão direito do mouse no evento estendido chamado **Bloqueio**, e selecione **Parar Sessão**.
 
-    ![Foto 06](../images/dp-300-module-08-lab-06.png)
+    ![Imagem 06](../images/dp-300-module-08-lab-06.png)
 
-1. Navegue de volta para a sessão de consulta que está causando o bloqueio e digite `ROLLBACK TRANSACTION` na linha abaixo da consulta. Realce `ROLLBACK TRANSACTION`e selecione **Executar**.
+1. Navegue de volta para a sessão de consulta que está causando o bloqueio e digite `ROLLBACK TRANSACTION` na linha abaixo da consulta. Realce `ROLLBACK TRANSACTION` e selecione **Executar**.
 
-    ![Foto 07](../images/dp-300-module-08-lab-07.png)
+    ![Imagem 07](../images/dp-300-module-08-lab-07.png)
 
 1. Navegue de volta para a sessão de consulta que estava sendo bloqueada. Você observará que a consulta já foi concluída.
 
-    ![Foto 08](../images/dp-300-module-08-lab-08.png)
+    ![Imagem 08](../images/dp-300-module-08-lab-08.png)
 
 ## Habilitar nível de isolamento do instantâneo da confirmação de leitura
 
@@ -190,7 +190,7 @@ Você foi contratado como administrador de banco de dados para identificar probl
     GO
     ```
 
-1. Execute novamente a consulta que causou o bloqueio em um novo editor de consultas.
+1. Execute novamente a consulta que causou o bloqueio em um novo Editor de Consultas.
 
     ```sql
     USE AdventureWorks2017
@@ -202,7 +202,7 @@ Você foi contratado como administrador de banco de dados para identificar probl
     GO
     ```
 
-1. Execute novamente a consulta que estava sendo bloqueada em um novo editor de consultas.
+1. Execute novamente a consulta que estava sendo bloqueada em um novo Editor de Consultas.
 
     ```sql
     USE AdventureWorks2017
@@ -215,10 +215,10 @@ Você foi contratado como administrador de banco de dados para identificar probl
     WHERE firstname = 'David'
     ```
 
-    ![Foto 09](../images/dp-300-module-08-lab-09.png)
+    ![Imagem 09](../images/dp-300-module-08-lab-09.png)
 
-    Considere por que a consulta da Etapa 3 agora foi concluída, enquanto na tarefa anterior ela foi bloqueada pelo comando UPDATE.
+    Por que a mesma consulta é concluída, enquanto na tarefa anterior ela foi bloqueada pelo comando update?
 
-    O isolamento de instantâneo de leitura confirmada é uma forma otimista de isolamento de transação. Além disso, a última consulta mostrará a versão confirmada e mais recente dos dados, em vez de ser bloqueada.
+    O nível de isolamento Instantâneo de Leitura Confirmada é uma forma otimista de isolamento de transação, e a última consulta mostrará a última versão confirmada dos dados, em vez de ser bloqueada.
 
 Neste exercício, você aprendeu a identificar sessões que estão sendo bloqueadas e a mitigar esses cenários.

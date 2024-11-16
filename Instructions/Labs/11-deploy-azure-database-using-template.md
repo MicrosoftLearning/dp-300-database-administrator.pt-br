@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Laboratório: implantar Banco de Dados SQL do Azure usando um modelo do Azure Resource Manager'
+  title: Laboratório 11 – Implantar Banco de Dados SQL do Azure usando um modelo do Azure Resource Manager
   module: Automate database tasks for Azure SQL
 ---
 
@@ -8,7 +8,7 @@ lab:
 
 **Tempo estimado**: 15 minutos
 
-Você foi contratado como engenheiro de dados sênior para ajudar a automatizar operações rotineiras de administração do banco de dados. Essa automação serve para ajudar a garantir que os bancos de dados do AdventureWorks continuem operando com o máximo de desempenho e para fornecer métodos para gerar alertas com base em determinados critérios. O AdventureWorks usa o SQL Server em ofertas de Infraestrutura como Serviço e Plataforma como Serviço.
+Você foi contratado como engenheiro de dados sênior para ajudar a automatizar operações rotineiras de administração do banco de dados. Essa automação serve para ajudar a garantir que os bancos de dados do AdventureWorks continuem operando com o máximo de desempenho e para fornecer métodos para gerar alertas com base em determinados critérios. A AdventureWorks usa o SQL Server em ofertas de IaaS (infraestrutura como serviço) e PaaS (plataforma como serviço).
 
 ## Explorar o modelo do Azure Resource Manager
 
@@ -18,7 +18,7 @@ Você foi contratado como engenheiro de dados sênior para ajudar a automatizar 
     https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.sql/sql-database
     ```
 
-1. Clique com o botão direito do mouse em **azuredeploy.json** e selecione **Abrir link na nova guia** para exibir o modelo do ARM, que deve ser semelhante a este
+1. Clique com o botão direito do mouse em **azuredeploy.json** e selecione **Abrir link em nova guia** para exibir o modelo do ARM, que deve ser semelhante a este:
 
     ```JSON
     {
@@ -96,18 +96,18 @@ Você foi contratado como engenheiro de dados sênior para ajudar a automatizar 
 
     ![Botão Implantar no Azure](../images/dp-300-module-11-lab-01.png)
 
-1. A **página Criar um modelo de início rápido do SQL Server e Banco de Dados será aberta no portal do Azure, com os detalhes do recurso parcialmente preenchidos a partir do** modelo ARM. Preencha os campos com as seguintes informações:
+1. A página do modelo de início rápido **Criar um SQL Server e Banco de Dados** será aberta no portal do Azure, com os detalhes do recurso parcialmente preenchidos a partir do modelo do ARM. Preencha os campos em branco com as informações abaixo:
 
     - **Grupo de recursos:** começando com *contoso-rg*
-    - Logon do Administrador SQL: labadmin
-    - Senha de logon do Administrador SQL: insira uma senha forte
+    - **Logon do Administrador SQL:** labadmin
+    - **Senha de logon do Administrador SQL:**&lt;insira uma senha forte&gt;
 
 1. Selecione **Examinar + Criar** e, em seguida, selecione **Criar**. Sua implantação levará em torno de cinco minutos para ser realizada.
 
-    ![Figura 2](../images/dp-300-module-11-lab-02.png)
+    ![Imagem 2](../images/dp-300-module-11-lab-02.png)
 
-1. Quando a implantação for concluída, selecione **Ir para grupo de recursos**. Você será levado para o grupo de recursos do Azure, que contém um recurso do **SQL Server** nomeado aleatoriamente pela implantação.
+1. Quando a implantação for concluída, selecione **Ir para grupo de recursos**. Você será direcionado para o Grupo de Recursos do Azure, que contém um recurso do **SQL Server** nomeado aleatoriamente e criado pela implantação.
 
-    ![Figura 3](../images/dp-300-module-11-lab-03.png)
+    ![Imagem 3](../images/dp-300-module-11-lab-03.png)
 
-Você acabou de ver como, com um único clique no link de um modelo do Azure Resource Manager, você pode criar um banco de dados e um servidor SQL do Azure em minutos.
+Você acabou de ver como, com um único clique no link de um modelo do Azure Resource Manager, você pode criar facilmente um banco de dados e um servidor SQL do Azure.

@@ -4,9 +4,9 @@ permalink: index.html
 layout: home
 ---
 
-# Exercícios de Administração de Banco de Dados
+# Exercícios de administração de banco de dados
 
-Estes exercícios dão suporte ao curso [DP-300 da Microsoft: Administrando soluções](https://docs.microsoft.com/training/courses/dp-300t00) SQL do Microsoft Azure.
+Estes exercícios dão suporte ao curso da Microsoft [DP-300: como administrar soluções do Microsoft SQL do Azure](https://docs.microsoft.com/training/courses/dp-300t00).
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
 | Módulo | Exercício |

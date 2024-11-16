@@ -1,36 +1,36 @@
 ---
 lab:
-  title: 'Laboratório: identificar problemas de design de banco de dados'
+  title: Laboratório 9 – Identificar problemas de design de banco de dados
   module: Optimize query performance in Azure SQL
 ---
 
-# Laboratório: identificar problemas de design de banco de dados
+# Identificar problemas de design de banco de dados
 
 **Tempo estimado**: 15 minutos
 
-Os alunos levarão as informações obtidas nas aulas para definir o escopo dos resultados de um projeto de transformação digital dentro da AdventureWorks. Examinando o portal do Azure, bem como outras ferramentas, os alunos determinarão como utilizar ferramentas nativas para identificar e resolver problemas relacionados ao desempenho. Você avaliará um design de banco de dados em relação a problemas com normalização, seleção de tipo de dado e design de índice.
+Os alunos levarão as informações obtidas nas aulas para definir o escopo das entregas para um projeto de transformação digital no AdventureWorks. Ao examinar o portal do Azure, bem como outras ferramentas, os alunos determinarão como utilizar ferramentas nativas para identificar e resolver problemas relacionados ao desempenho. Por fim, os alunos poderão avaliar um design de banco de dados em relação a problemas com normalização, seleção de tipo de dados e design de índice.
 
-Você foi contratado como administrador de banco de dados para identificar problemas relacionados ao desempenho e fornecer soluções viáveis para solucionar todos os problemas encontrados. A AdventureWorks vende bicicletas e peças para bicicletas diretamente para clientes finais e distribuidores há mais de uma década. Seu trabalho é identificar problemas no desempenho das consultas e resolvê-los usando as técnicas aprendidas neste módulo.
+Você foi contratado como administrador de banco de dados para identificar problemas relacionados ao desempenho e fornecer soluções viáveis para solucionar todos os problemas encontrados. A AdventureWorks vende bicicletas e peças para bicicletas diretamente para consumidores e distribuidores há mais de uma década. Seu trabalho é identificar problemas no desempenho das consultas e resolvê-los usando as técnicas aprendidas neste módulo.
 
-**Nota:** Estes exercícios pedem que você copie e cole o código T-SQL. Verifique se o código foi copiado corretamente, antes de executar o código.
+**Observação:** estes exercícios pedem que você copie e cole o código T-SQL. Verifique se o código foi copiado corretamente antes de executá-lo.
 
 ## Restaurar um banco de dados
 
-1. Faça download do arquivo de backup do banco de dados localizado em ****https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** C:\LabFiles\Monitor e otimize** o caminho na máquina virtual do laboratório (crie a estrutura de pastas se ela não existir).
+1. Faça download do arquivo de backup do banco de dados localizado em **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** para o caminho **C:\LabFiles\Monitor and optimize** na máquina virtual do laboratório (crie a estrutura de pastas se ela não existir).
 
-    ![Foto 03](../images/dp-300-module-07-lab-03.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-03.png)
 
 1. Selecione o botão Iniciar do Windows e digite SSMS. Selecione **Microsoft SQL Server Management Studio 18** na lista.  
 
-    ![Figura 48](../images/dp-300-module-01-lab-34.png)
+    ![Imagem 01](../images/dp-300-module-01-lab-34.png)
 
-1. Quando o SSMS for aberto, observe que a caixa de diálogo Conectar ao Servidor** será pré-preenchida com o **nome de instância padrão. Selecione **Conectar**.
+1. Quando o SSMS for aberto, observe que a caixa de diálogo **Conectar ao Servidor** será pré-preenchida com o nome de instância padrão. Selecione **Conectar**.
 
-    ![Foto 02](../images/dp-300-module-07-lab-01.png)
+    ![Imagem 02](../images/dp-300-module-07-lab-01.png)
 
-1. Selecione a **pasta Bancos de Dados** e Nova **Consulta**.
+1. Selecione a pasta**Bancos de Dados** e **Nova Consulta**.
 
-    ![Foto 03](../images/dp-300-module-07-lab-04.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-04.png)
 
 1. Na janela Nova consulta, copie e cole o T-SQL abaixo. Execute a consulta para restaurar o banco de dados.
 
@@ -44,11 +44,11 @@ Você foi contratado como administrador de banco de dados para identificar probl
             TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
     ```
 
-    **Nota:** O nome e o caminho do arquivo de backup do banco de dados devem corresponder ao que você baixou na etapa 1, caso contrário, o comando falhará.
+    **Observação:** o nome e o caminho do arquivo de backup do banco de dados devem corresponder ao que você baixou na etapa 1, caso contrário, o comando falhará.
 
-1. Você verá uma mensagem bem-sucedida após a conclusão da restauração.
+1. Uma mensagem de sucesso será exibida após a conclusão da restauração.
 
-    ![Foto 03](../images/dp-300-module-07-lab-05.png)
+    ![Imagem 03](../images/dp-300-module-07-lab-05.png)
 
 ## Examinar a consulta e identificar o problema
 
@@ -63,17 +63,17 @@ Você foi contratado como administrador de banco de dados para identificar probl
     WHERE NationalIDNumber = 14417807;
     ```
 
-1. Antes de executar a consulta, selecione o ícone Incluir Plano de Execução Real, como mostrado abaixo, ou pressione Ctrl+M. Isso fará com que o plano de execução seja exibido quando você executar a consulta. Clique em **Executar** para executar esta consulta.
+1. Antes de executar a consulta, selecione o ícone **Incluir Plano de Execução Real**, como mostrado abaixo, ou pressione **CTRL+M**. Isso fará com que o plano de execução seja exibido quando você executar a consulta. Clique em **Executar** para executar esta consulta.
 
-    ![Figura 48](../images/dp-300-module-09-lab-01.png)
+    ![Imagem 01](../images/dp-300-module-09-lab-01.png)
 
-1. Navegue até o plano de execução selecionando a guia **Plano de execução** no painel de resultados no SSMS. No plano de execução, passe o mouse sobre o operador SELECT. Você notará uma mensagem de aviso identificada por um ponto de exclamação em um triângulo amarelo, conforme mostrado abaixo. Identifique o que a Mensagem de Aviso informa.
+1. Navegue até o plano de execução e selecione a guia **Plano de execução** no painel de resultados. No plano de execução, passe o mouse sobre o operador `SELECT`. Você notará uma mensagem de aviso identificada por um ponto de exclamação em um triângulo amarelo, conforme mostrado abaixo. Identifique o que a mensagem de aviso informa.
 
-    ![Foto 02](../images/dp-300-module-09-lab-02.png)
+    ![Imagem 02](../images/dp-300-module-09-lab-02.png)
 
 ## Identificar maneiras de corrigir a mensagem de aviso
 
-A estrutura da tabela é mostrada na instrução DDL (linguagem de definição de dados) a seguir. Examine os campos que foram usados na consulta SQL anterior nessa DDL, prestando atenção em seus tipos.
+A estrutura de tabela *[HumanResources].[Employee]* é mostrada na instrução DDL (linguagem de definição de dados) a seguir. Examine os campos que foram usados na consulta SQL anterior nessa DDL, prestando atenção em seus tipos.
 
 ```sql
 CREATE TABLE [HumanResources].[Employee](
@@ -96,7 +96,7 @@ CREATE TABLE [HumanResources].[Employee](
 ) ON [PRIMARY]
 ```
 
-1. De acordo com a mensagem de alerta apresentada no plano de execução, que mudança recomendaria?
+1. De acordo com a mensagem de aviso apresentada no plano de execução, que mudança você recomendaria?
 
     1. Identifique qual campo está causando a conversão implícita e por quê. 
     1. Se você examinar a consulta:
@@ -107,17 +107,17 @@ CREATE TABLE [HumanResources].[Employee](
         WHERE NationalIDNumber = 14417807;
         ```
 
-        Notará que o valor comparado à coluna NationalIDNumber na cláusula WHERE é comparado como um número, pois 14417807 não está em uma cadeia de caracteres entre aspas. 
+        Você notará que o valor comparado à coluna *NationalIDNumber* na cláusula `WHERE` é comparado como um número, pois **14417807** não está em uma cadeia de caracteres entre aspas. 
 
-        Depois de examinar a estrutura da tabela, você verá que a coluna NationalIDNumber está usando o tipo de dados nvarchar (15) e não um tipo de dados inteiro. Essa inconsistência faz com que o otimizador do SQL Server converta implicitamente o número em um nvarchar, o que gera sobrecarga adicional no desempenho da consulta e cria um plano de qualidade inferior.
+        Depois de examinar a estrutura da tabela, você verá que a coluna *NationalIDNumber* está usando o tipo de dados `NVARCHAR` e não um tipo de dados `INT`. Essa inconsistência faz com que o otimizador de banco de dados converta implicitamente o número em um valor `NVARCHAR`, o que gera sobrecarga adicional no desempenho da consulta e cria um plano de qualidade inferior.
 
-Há duas abordagens que podemos implementar para corrigir o aviso de conversão implícita. Vamos investigar cada um deles nos próximos passos.
+Há duas abordagens que podemos implementar para corrigir o aviso de conversão implícita. Vamos investigar cada uma delas nas próximas etapas.
 
-### Altere o código para:
+### Alterar o código
 
-1. Como você alteraria o código para resolver a conversão implícita? Altere o código e execute novamente a consulta.
+1. Como você alteraria o código para resolver a conversão implícita? Altere o código e execute a consulta novamente.
 
-    Lembre-se de habilitar a opção Incluir Plano de Execução Real (CNTL+M) se ainda não tiver sido ativada nas etapas acima. 
+    Lembre-se de ativar a opção **Incluir Plano de Execução Real** (**CTRL+M**) se ainda não tiver ativada. 
 
     Nesse cenário, basta adicionar um único símbolo de aspas em cada lado do valor para alterá-lo de um número para um formato de caractere. Mantenha a janela de consulta aberta para essa consulta.
 
@@ -129,11 +129,11 @@ Há duas abordagens que podemos implementar para corrigir o aviso de conversão 
     WHERE NationalIDNumber = '14417807';
     ```
 
-    ![Foto 03](../images/dp-300-module-09-lab-03.png)
+    ![Imagem 03](../images/dp-300-module-09-lab-03.png)
 
-    Observe que o aviso agora não aparece e o plano de consulta melhorou. A alteração da cláusula Where para que o valor comparado à coluna NationalIDNumber corresponda ao tipo de dados da coluna na tabela permite que o otimizador se livre da conversão implícita.
+    **Observação:** a mensagem de aviso agora não aparece e o plano de consulta melhorou. A alteração da cláusula `WHERE` para que o valor comparado à coluna *NationalIDNumber* corresponda ao tipo de dados da coluna na tabela permitiu que o otimizador se livrasse da conversão implícita.
 
-### Alterar o tipo de dados.
+### Alterar o tipo de dados
 
 1. Também podemos corrigir o aviso de conversão implícita alterando a estrutura da tabela.
 
@@ -143,11 +143,11 @@ Há duas abordagens que podemos implementar para corrigir o aviso de conversão 
     ALTER TABLE [HumanResources].[Employee] ALTER COLUMN [NationalIDNumber] INT NOT NULL;
     ```
 
-    Alterar o tipo de dados da coluna NationalIDNumber* para INT resolveria o problema de *conversão. No entanto, essa alteração apresenta outro problema que, como administrador de banco de dados, você precisa resolver.
+    Alterar o tipo de dados da coluna *NationalIDNumber* para INT resolveria o problema de conversão. No entanto, essa alteração apresenta outro problema que, como administrador de banco de dados, você precisa resolver.
 
-    ![Foto 04](../images/dp-300-module-09-lab-04.png)
+    ![Imagem 04](../images/dp-300-module-09-lab-04.png)
 
-    Como essa coluna faz parte de um índice não clusterizado já existente, o índice precisa ser recriado para que o tipo de dados seja alterado. Isso pode gerar um tempo de inatividade estendido na produção, o que realça a importância da escolha dos tipos de dados certos em seu design.
+    A coluna *NationalIDNumber* faz parte de um índice não clusterizado já existente. O índice precisa ser recriado para que o tipo de dados seja alterado. **Isso pode gerar um tempo de inatividade estendido na produção, o que realça a importância da escolha dos tipos de dados certos em seu design.**
 
 1. Para resolver esse problema, copie e cole o código abaixo na janela de consulta e execute-o selecionando **Executar**.
 
@@ -168,7 +168,7 @@ Há duas abordagens que podemos implementar para corrigir o aviso de conversão 
     GO
     ```
 
-1. Como alternativa, você pode executar a consulta abaixo para confirmar se o tipo de dados foi alterado com êxito.
+1. Como alternativa, você pode executar a consulta abaixo para confirmar se o tipo de dados foi alterado corretamente.
 
     ```sql
     SELECT c.name, t.name
@@ -178,7 +178,7 @@ Há duas abordagens que podemos implementar para corrigir o aviso de conversão 
         AND c.name = 'NationalIDNumber'
     ```
     
-    ![Foto 05](../images/dp-300-module-09-lab-05.png)
+    ![Imagem 05](../images/dp-300-module-09-lab-05.png)
     
 1. Agora vamos verificar o plano de execução. Execute novamente a consulta original sem as aspas.
 
@@ -191,8 +191,8 @@ Há duas abordagens que podemos implementar para corrigir o aviso de conversão 
     WHERE NationalIDNumber = 14417807;
     ```
 
-    ![Foto 06](../images/dp-300-module-09-lab-06.png)
+    ![Imagem 06](../images/dp-300-module-09-lab-06.png)
 
-    Examine o plano de consulta e observe que agora você pode usar um inteiro para filtrar por *NationalIDNumber* sem o aviso de conversão implícito. O otimizador de consulta do SQL agora pode gerar e executar o plano mais adequado.
+    Examine o plano de consulta e observe que agora você pode usar um inteiro para filtrar por *NationalIDNumber* sem o aviso de conversão implícita. O otimizador de consulta do SQL agora pode gerar e executar o plano mais adequado.
 
-Neste exercício, você aprendeu como identificar problemas de consulta causados por conversões de tipo de dados implícitos e como corrigi-los para melhorar o plano de consulta.
+Neste exercício, você aprendeu a identificar problemas de consulta causados por conversões implícitas de tipo de dados e como corrigi-los para melhorar o plano de consulta.
