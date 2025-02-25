@@ -45,12 +45,6 @@ Como administrador de banco de dados do AdventureWorks, você configurará um no
 
 1. Clique em **Revisar + Criar**, reveja as definições da nova rede virtual e, em seguida, clique em **Criar**.
 
-1. Configure o intervalo de IP da rede virtual para o ponto de extremidade do banco de dados SQL do Azure navegando até a rede virtual criada e, no painel **Configurações**, clique em **Sub-redes**.
-
-1. Clique no link de sub-rede **padrão**. Observe que o **intervalo de endereços de sub-rede** que você vê pode ser diferente.
-
-1. No painel **Editar sub-rede** à direita, expanda a lista suspensa **Serviços** e marque **Microsoft.Sql**. Selecione **Salvar**.
-
 ## Provisionar um Banco de Dados SQL do Azure
 
 1. No Portal do Azure, procure por "bancos de dados SQL" na caixa de pesquisa na parte superior e clique em **Bancos de dados SQL** na lista de opções.
