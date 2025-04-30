@@ -12,25 +12,31 @@ Idealmente, você deve concluir esses laboratórios em um ambiente de laboratór
 
 > &#128221; As instruções abaixo são para um computador Windows 10. Você também pode usar Linux ou MacOS. Talvez seja necessário adaptar as instruções de laboratório para o sistema operacional escolhido.
 
-### Windows 10 (SISTEMA OPERACIONAL)
+### Windows 11 (OS)
 
-1. Instale o Windows 10 (*versão 2004 ou posterior*).
+1. Instale o Windows 11.
 
 1. Aplique todas as atualizações disponíveis.
 
 ### Edge
 
-1. Instale a versão mais recente do Microsoft Edge a partir de [microsoft.com/edge].
+1. Instale a versão mais recente do Microsoft Edge em [https://microsoft.com/edge].
 
 ### Git
 
-1. Transfira e instale a partir de [git-scm.com/downloads].
+1. Baixe e instale de [https://git-scm.com/downloads].
+
+    - Use as opções padrão no instalador.
+
+### CLI do Azure
+
+1. Baixe e instale de [https://aka.ms/installazurecliwindows].
 
     - Use as opções padrão no instalador.
 
 ### Visual Studio Code
 
-1. Baixe e instale a partir de [code.visualstudio.com/download].
+1. Baixe e instale de [https://code.visualstudio.com/download].
 
     - Use as opções padrão no instalador.
 
@@ -40,8 +46,10 @@ Idealmente, você deve concluir esses laboratórios em um ambiente de laboratór
 
     - Use as opções padrão no instalador.
 
-### Azure Data Studio
+### SQL Server 2022 Developer Edition
 
-1. Baixe e instale de [https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio].
+1. Baixe e instale de [https://www.microsoft.com/en-us/sql-server/sql-server-downloads].
 
-    - Use as opções padrão no instalador.
+    - Use as opções padrão no instalador. Somente o Mecanismo de Banco de Dados do SQL Server é necessário para esses laboratórios.
+    - Você pode usar a instância padrão.
+    - Você pode usar o modo de autenticação padrão.
