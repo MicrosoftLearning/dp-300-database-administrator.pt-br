@@ -14,7 +14,7 @@ Você é um administrador de banco de dados da AdventureWorks. Você precisa cri
 
 ## Implantar o SQL Server em uma Máquina Virtual do Azure
 
-1. Na máquina virtual do laboratório, inicie uma sessão do navegador, navegue até [https://portal.azure.com](https://portal.azure.com/) e faça login usando a conta Microsoft associada à sua assinatura do Azure.
+1. Inicie uma sessão do navegador, acesse [https://portal.azure.com](https://portal.azure.com/) e faça login usando a conta Microsoft associada à sua assinatura do Azure.
 
 1. Localize a barra de pesquisa na parte superior da página. Pesquise por **SQL do Azure**. Selecione o resultado da pesquisa do **SQL do Azure** que aparece nos resultados em **Serviços**.
 
@@ -101,7 +101,7 @@ Se você criou um novo grupo de recursos para este laboratório, poderá excluir
 
 1. Vá para o grupo de recursos criado para o laboratório. O grupo de recursos conterá a máquina virtual e outros recursos criados neste laboratório.
 
-1. Escolha **Excluir grupo de recursos** no menu superior.
+1. Selecione **Excluir grupo de recursos** no menu superior.
 
 1. Na caixa de diálogo **Excluir grupo de recursos**, digite o nome do grupo para confirmar e clique em **Excluir**.
 
