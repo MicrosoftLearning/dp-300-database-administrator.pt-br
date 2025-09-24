@@ -82,6 +82,10 @@ Entre no Azure e verifique se você tem uma instância existente do SQL Server d
     **Observação:** Esta funcionalidade está em versão prévia.
 
 1. Selecione o nome de usuário administrador do SQL Server e insira a senha ou suas credenciais do Microsoft Entra, se atribuídas, para se conectar ao banco de dados.
+    - **Nome do servidor:** &lt;_cole o nome do servidor do Banco de Dados SQL do Azure aqui_&gt;
+    - **Autenticação:** Autenticação do SQL Server
+    - **Logon de administrador do servidor:** seu logon de administrador do servidor do Banco de Dados SQL do Azure
+    - **Senha:** sua senha de administrador do servidor do Banco de Dados SQL do Azure
 
 1. Em **Consulta 1**, digite a consulta a seguir e escolha **Executar**:
 
@@ -148,7 +152,7 @@ Se você criou um novo grupo de recursos para este laboratório, poderá excluir
 
 1. Vá para o grupo de recursos criado para o laboratório. O grupo de recursos conterá o SQL Server do Azure e outros recursos criados neste laboratório.
 
-1. Escolha **Excluir grupo de recursos** no menu superior.
+1. Selecione **Excluir grupo de recursos** no menu superior.
 
 1. Na caixa de diálogo **Excluir grupo de recursos**, digite o nome do grupo para confirmar e clique em **Excluir**.
 
