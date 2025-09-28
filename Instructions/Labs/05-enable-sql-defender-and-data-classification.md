@@ -284,7 +284,7 @@ Se você criou um novo grupo de recursos para este laboratório, poderá excluir
 
 1. Vá para o grupo de recursos criado para o laboratório. O grupo de recursos conterá o SQL Server do Azure e outros recursos criados neste laboratório.
 
-1. Escolha **Excluir grupo de recursos** no menu superior.
+1. Selecione **Excluir grupo de recursos** no menu superior.
 
 1. Na caixa de diálogo **Excluir grupo de recursos**, digite o nome do grupo para confirmar e clique em **Excluir**.
 
