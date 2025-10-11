@@ -59,7 +59,7 @@ Entre no Azure e verifique se você tem uma instância existente do SQL Server d
 
 ---
 
-## Habilitar a replicação geográfica
+## Habilite a replicação geográfica.
 
 1.  Na máquina virtual do laboratório, ou em seu computador local, se não tiver sido fornecida, inicie uma sessão do navegador e navegue até [https://portal.azure.com](https://portal.azure.com/). Conecte-se ao Portal usando as suas credenciais do Azure.
 
@@ -137,7 +137,7 @@ Se você criou um novo grupo de recursos para este laboratório, poderá excluir
 
 1. Vá para o grupo de recursos criado para o laboratório. O grupo de recursos conterá o SQL Server do Azure e outros recursos criados neste laboratório.
 
-1. Escolha **Excluir grupo de recursos** no menu superior.
+1. Selecione **Excluir grupo de recursos** no menu superior.
 
 1. Na caixa de diálogo **Excluir grupo de recursos**, digite o nome do grupo para confirmar e clique em **Excluir**.
 

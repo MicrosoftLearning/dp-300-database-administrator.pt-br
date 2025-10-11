@@ -70,7 +70,7 @@ Se você já tiver o banco de dados **AdventureWorks2017** restaurado, ignore es
 
 1. Será solicitado que você abra um navegador e insira um código exclusivo. Siga as instruções para entrar na sua conta do Azure.
 
-1. *Se você já tiver um grupo de recursos, ignore esta etapa*. Se você não tiver um grupo de recursos, crie um usando o seguinte comando no terminal. Substitua *contoso-rgXXX######* por um nome exclusivo para o grupo de recursos. O nome deve ser exclusivo no Azure. Substitua seu local (-l) pelo local do seu grupo de recursos.
+1. *Se você já tiver um grupo de recursos, ignore esta etapa*. Se você não tiver um grupo de recursos, crie um usando o seguinte comando no terminal. Substitua *contoso-rgXXX######* por um nome exclusivo para o grupo de recursos. O nome deve ser exclusivo em todo o Azure. Substitua seu local (-l) pelo local do seu grupo de recursos.
 
     ```bash
     az group create -n "contoso-rglod#######" -l eastus2
@@ -78,7 +78,7 @@ Se você já tiver o banco de dados **AdventureWorks2017** restaurado, ignore es
 
     Substitua **######** por alguns caracteres aleatórios.
 
-1. No terminal, digite o seguinte e pressione **Enter** para criar uma conta de armazenamento. Certifique-se de usar um nome exclusivo para a conta de armazenamento. *O nome deve ter entre 3 e 24 caracteres e pode conter apenas números e letras minúsculas.* Substitua *########* por oito caracteres numéricos aleatórios. O nome deve ser exclusivo no Azure. Substitua contoso-rgXXX###### pelo nome do grupo de recursos. Por fim, substitua seu local (-l) pelo local do seu grupo de recursos.
+1. No terminal, digite o seguinte e pressione **Enter** para criar uma conta de armazenamento. Certifique-se de usar um nome exclusivo para a conta de armazenamento. *O nome deve ter entre 3 e 24 caracteres e pode conter apenas números e letras minúsculas.* Substitua *########* por oito caracteres numéricos aleatórios. O nome deve ser exclusivo em todo o Azure. Substitua contoso-rgXXX###### pelo nome do grupo de recursos. Por fim, substitua seu local (-l) pelo local do seu grupo de recursos.
 
     ```bash
     az storage account create -n "dp300bckupstrg########" -g "contoso-rgXXX########" --kind StorageV2 -l eastus2
@@ -261,7 +261,7 @@ Se você criou um novo grupo de recursos para este laboratório, poderá excluir
 
 1. Vá para o grupo de recursos criado para o laboratório. O grupo de recursos conterá o SQL Server do Azure e outros recursos criados neste laboratório.
 
-1. Escolha **Excluir grupo de recursos** no menu superior.
+1. Selecione **Excluir grupo de recursos** no menu superior.
 
 1. Na caixa de diálogo **Excluir grupo de recursos**, digite o nome do grupo para confirmar e clique em **Excluir**.
 
