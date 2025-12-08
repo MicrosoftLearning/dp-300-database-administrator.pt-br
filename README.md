@@ -1,5 +1,3 @@
-**⚠️ This GitHub repo will retire on 30th December 2025.** 
-
 # DP-300: Implementar soluções de banco de dados escalonáveis usando SQL do Azure
 
 - **Você é um MCT?** Dê uma olhada no nosso [Guia de usuário do GitHub para MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
